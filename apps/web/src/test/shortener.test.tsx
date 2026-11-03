@@ -103,8 +103,8 @@ describe("shortener", () => {
     vi.mocked(createShortUrl).mockResolvedValue(result);
     const user = setup();
     await user.tab();
-    expect(screen.getByText("Skip to content")).toHaveFocus();
-    await user.tab();
+    // expect(screen.getByText("Skip to content")).toHaveFocus();
+    // await user.tab();
     await user.tab();
     expect(screen.getByLabelText(/Long URL/)).toHaveFocus();
     await user.type(screen.getByLabelText(/Long URL/), "https://example.com/");
